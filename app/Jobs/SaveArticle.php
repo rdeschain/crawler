@@ -40,15 +40,15 @@ class SaveArticle implements ShouldQueue
     {
         //if (!Article::where('encoded_url', base64_encode(urlencode($this->url)))->exists()) {
 
-        Article::updateOrCreate([['encoded_url',
-                                  base64_encode(urlencode($this->url))],
-                                 ['url',
-                                  $this->url],
-                                 ['date',
-                                  $this->date],
-                                 ['timestamp',
-                                  $this->timestamp]],
-            ['free' => $this->free]);
+        Article::updateOrCreate(['encoded_url' =>
+                                     base64_encode(urlencode($this->url)),
+                                 'url' =>
+                                     $this->url,
+                                 'date' =>
+                                     $this->date,
+                                 'timestamp' =>
+                                     $this->timestamp,
+                                 'free' => $this->free]);
         //}
     }
 }
