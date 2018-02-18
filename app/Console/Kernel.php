@@ -33,18 +33,20 @@ class Kernel extends ConsoleKernel
 
             $article = Article::where([['free', 1], ['tweeted', 0]])->orderBy('date', 'asc')->first();
 
-            try {
+            if($article !== null) {
+                try {
 
-                if($article !== null) {
                     Twitter::postTweet(['status' => $article->url,
                                         'format' => 'json']);
 
                     $article->tweeted = 1;
-                    $article->save();
+
+                } catch (\Exception $e) {
+
+                    $article->tweeted = 2;
                 }
 
-            } catch (\Exception $e) {
-
+                $article->save();
             }
 
         })->everyMinute();
