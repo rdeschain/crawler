@@ -1,19 +1,19 @@
-###Simple web crawler that finds and tweets unlocked-articles
+### Simple web crawler that finds and tweets unlocked-articles
 There is a bit of infrastructure and setup involved to correctly run this code.
 
-####Install Laravel
+#### Install Laravel
 This projects runs[Laravel 5.3](https://laravel.com/). Here is how to install this version:
 `composer create-project laravel/laravel <your_dir> --prefer-dist 5.3`
 
 Run `composer install` after installing the framework and pulling down the repo. You'll also need the included packages. You'll need to follow these steps to post to[Twitter](https://github.com/thujohn/twitter).
 
-####Queues and Queu workers
+#### Queues and Queue workers
 The crawler depends on[queuing](https://laravel.com/docs/5.3/queues) to mange the list of pending links to be processed.
 The advantage of using queues is that workers can be scaled up or down depending on how 'aggressive' the crawler should act.
 Installing and configuring Supervisor is best way to manage workers. Laravel provides some documentation on[setting up Supervisor](https://laravel.com/docs/5.3/queues#supervisor-configuration).
 You are able to use any number of[queue drivers](https://laravel.com/docs/5.3/queues#driver-prerequisites). I typically use Redis.
 
-####Database
+#### Database
 Visited links are stored in the database and is the mechanism to prevent the crawler from crawling forever. Here are required tables.
 
 "CREATE TABLE `t_articles` (
