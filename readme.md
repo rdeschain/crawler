@@ -5,7 +5,7 @@ There is a bit of infrastructure and setup involved to correctly run this code.
 This projects runs [Laravel 5.3](https://laravel.com/). Here is how to install this version:
 `composer create-project laravel/laravel <your_dir> --prefer-dist 5.3`
 
-Run `composer install` after installing the framework and pulling down the repo. You'll also need the included packages. You'll need to follow these steps to post to[Twitter](https://github.com/thujohn/twitter).
+Run `composer install` after installing the framework and pulling down the repo. You'll also need the included packages. You'll need to follow these steps to post to [Twitter](https://github.com/thujohn/twitter).
 
 #### Queues and Queue workers
 The crawler depends on [queuing](https://laravel.com/docs/5.3/queues) to mange the list of pending links to be processed.
