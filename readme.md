@@ -45,7 +45,7 @@ Visited links are stored in the database and is the mechanism to prevent the cra
     PRIMARY KEY (`id`),
     UNIQUE KEY `id_UNIQUE` (`id`),
     UNIQUE KEY `url_UNIQUE` (`encoded_url`)
-  ) ENGINE=InnoDB AUTO_INCREMENT=1980 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
+  ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
 
   "CREATE TABLE `t_failed_jobs` (
      `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -55,7 +55,7 @@ Visited links are stored in the database and is the mechanism to prevent the cra
      `exception` longtext CHARACTER SET utf8,
      `failed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
      PRIMARY KEY (`id`)
-   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
+   ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
 
 #### Commands
 
