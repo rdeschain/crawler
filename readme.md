@@ -2,8 +2,8 @@
 There is a bit of infrastructure and setup involved to correctly run this code.
 
 #### Install Laravel
-This projects runs [Laravel 5.3](https://laravel.com/). Here is how to install this version:
-`composer create-project laravel/laravel <your_dir> --prefer-dist 5.3`
+This projects runs [Laravel 5.3](https://laravel.com/). Here is how to[install](https://laravel.com/docs/5.3/installation) this version:
+`composer create-project laravel/laravel <your_project_dir> --prefer-dist 5.3`
 
 It is assumed that PHP 7.0+ is installed, but most likely PHP 5.6+ would also work.
 
@@ -11,7 +11,7 @@ Run `composer install` after installing the framework and pulling down the repo.
 
 #### Queues and Queue workers
 The crawler depends on [queuing](https://laravel.com/docs/5.3/queues) to mange the list of pending links to be processed.
-The advantage of using queues is that workers can be scaled up or down depending on how 'aggressive' the crawler should act.
+The advantage of using queues is that workers can be scaled up or down depending on how 'aggressive' the crawler should act by processing through the queue faster.
 Installing and configuring Supervisor is best way to manage workers. Laravel provides some documentation on [setting up Supervisor](https://laravel.com/docs/5.3/queues#supervisor-configuration).
 You are able to use any number of [queue drivers](https://laravel.com/docs/5.3/queues#driver-prerequisites). I typically use Redis.
 
