@@ -58,6 +58,8 @@ Visited links are stored in the database and is the mechanism to prevent the cra
    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
 
 #### Commands
+
+The crawler uses a custom [Artisan Command](https://laravel.com/docs/5.3/artisan).
 To run a full crawl simply mark all visited urls as not visited: `UPDATE t_urls SET visited=0`
 and then run this Artisan command in your project directory `php artisan run:crawler https://theathletic.com crawl`.
 The crawler will then index the entire site.
