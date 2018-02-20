@@ -5,6 +5,8 @@ There is a bit of infrastructure and setup involved to correctly run this code.
 This projects runs [Laravel 5.3](https://laravel.com/). Here is how to install this version:
 `composer create-project laravel/laravel <your_dir> --prefer-dist 5.3`
 
+It is assumed that PHP 7.0+ is installed, but most likely PHP 5.6+ would also work.
+
 Run `composer install` after installing the framework and pulling down the repo. You'll also need the included packages. You'll need to follow these steps to post to [Twitter](https://github.com/thujohn/twitter).
 
 #### Queues and Queue workers
@@ -54,3 +56,11 @@ Visited links are stored in the database and is the mechanism to prevent the cra
      `failed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
      PRIMARY KEY (`id`)
    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;"
+
+#### Commands
+To run a full crawl simply mark all visited urls as not visited: `UPDATE t_urls SET visited=0`
+and then run this Artisan command in your project directory `php artisan run:crawler https://theathletic.com crawl`.
+The crawler will then index the entire site.
+
+The hourly crawler only marks the homepage as not visited and runs a shallow crawl.
+
