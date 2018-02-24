@@ -2,7 +2,7 @@
 There is a bit of infrastructure and setup involved to correctly run this code.
 
 #### Install Laravel
-This projects runs [Laravel 5.3](https://laravel.com/). Here is how to[install](https://laravel.com/docs/5.3/installation) this version:
+This projects runs [Laravel 5.3](https://laravel.com/). Here is how to [install](https://laravel.com/docs/5.3/installation) this version:
 `composer create-project laravel/laravel <your_project_dir> --prefer-dist 5.3`
 
 It is assumed that PHP 7.0+ is installed, but most likely PHP 5.6+ would also work.
@@ -60,9 +60,8 @@ Visited links are stored in the database and is the mechanism to prevent the cra
 #### Commands
 
 The crawler uses a custom [Artisan Command](https://laravel.com/docs/5.3/artisan).
-To run a full crawl simply mark all visited urls as not visited: `UPDATE t_urls SET visited=0`
+To run a full crawl simply mark all visited urls as not visited: `UPDATE t_urls SET visited=0` or truncate the table t_urls
 and then run this Artisan command in your project directory `php artisan run:crawler https://theathletic.com crawl`.
 The crawler will then index the entire site.
 
 The hourly crawler only marks the homepage as not visited and runs a shallow crawl.
-
